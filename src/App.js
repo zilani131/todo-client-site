@@ -4,6 +4,7 @@ import { Routes, Route} from "react-router-dom";
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Navbar from './Shared/Navbar';
+import AddTask from './Pages/AddTask';
 function App() {
   return (
     <div className="App">
@@ -12,6 +13,7 @@ function App() {
 <Routes>
         <Route path="/home" element={<Home></Home>} />
         <Route path="/about" element={<About></About>} />
+        <Route path="/addtask" element={<AddTask></AddTask>} />
       </Routes>
     </div>
   );
