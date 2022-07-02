@@ -2,7 +2,7 @@ import React from 'react';
 import {  useQuery } from 'react-query'
 import Todolistcard from './Todolistcard';
 const Todolist = () => {
-    const {isLoading,error,data}=useQuery('task',()=>
+    const {isLoading,error,data,refetch}=useQuery('task',()=>
     // fetch(("http://localhost:5000/task").then(res=>res.json())))
     fetch('http://localhost:5000/task').then(res =>
     res.json()))
@@ -14,7 +14,7 @@ const Todolist = () => {
     }
     return (
         <div>
-            {data?.length && data.map(datum=><Todolistcard key={datum._id} datum={datum}></Todolistcard>)}
+            {data?.length && data.map(datum=><Todolistcard key={datum._id} datum={datum} refetch={refetch}></Todolistcard>)}
         </div>
     );
 };
