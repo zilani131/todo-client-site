@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 
 const Todolistcard = ({datum,refetch}) => {
+  const [user,loading,error]=useAuthState(auth);
+ 
     const {task,_id}=datum;
     const [edit,setEdit]=useState(true)
     const [checkbox,setCheckbox]=useState(false)
+    if(loading){
+      return <h1>Loading...</h1>
+    }
     const Edit=()=>{
         setEdit(!edit);
     }
@@ -13,9 +20,10 @@ const Todolistcard = ({datum,refetch}) => {
       
         console.log(e.target.task.value)
         const task=e.target.task.value;
-        
+      
         const data={task:task,
-        id:_id}
+        id:_id,
+    }
         fetch(`http://localhost:5000/taskupdate/${_id}`, {
     method: 'PUT', // or 'PUT'
     headers: {
@@ -34,9 +42,10 @@ const Todolistcard = ({datum,refetch}) => {
     const handleChecked=async (e)=>{
         console.log(e.target.checked)
         const check=e.target.checked;
-        
+        const email=user?.email
         if(check===true){
-            const data={task};
+            const data={task:task,
+              email:email};
             await fetch('http://localhost:5000/completetask', {
                 method: 'POST', // or 'PUT'
                 headers: {

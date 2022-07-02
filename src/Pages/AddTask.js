@@ -1,17 +1,24 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../firebase.init';
 
 const AddTask = () => {
+  const [user,loading,error]=useAuthState(auth);
+  if(loading){
+    return <h1>Loading...</h1>
+  }
     const Task=(e)=>{
         
        if(e.key==="Enter"){
         e.preventDefault();
         console.log(e.target?.value,"validate")
         const task=e.target?.value;
+        const email=user?.email;
         if(task===""){
             return alert("please give some input")
         }
         // console.log("after effect");
-        const data={task}
+        const data={task,email}
         
 fetch('http://localhost:5000/task', {
     method: 'POST', // or 'PUT'
