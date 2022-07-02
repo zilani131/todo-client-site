@@ -8,6 +8,8 @@ import CompletedTask from "./Pages/CompletedTask";
 import Login from "./Pages/Login";
 import Registration from "./Pages/Registration";
 import RequireAuth from "./Pages/RequireAuth";
+import Calender from "./Pages/Calender";
+import Footer from "./Shared/Footer";
 function App() {
   return (
     <div className="App">
@@ -47,9 +49,18 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route
+          path="/calender"
+          element={
+            <RequireAuth>
+             <Calender></Calender>
+            </RequireAuth>
+          }
+        />
         <Route path="/login" element={<Login></Login>} />
         <Route path="/registration" element={<Registration></Registration>} />
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

@@ -20,7 +20,7 @@ const AddTask = () => {
         // console.log("after effect");
         const data={task,email}
         
-fetch('http://localhost:5000/task', {
+fetch('https://serene-atoll-60052.herokuapp.com/task', {
     method: 'POST', // or 'PUT'
     headers: {
       'Content-Type': 'application/json',
@@ -37,9 +37,11 @@ fetch('http://localhost:5000/task', {
        
     }
     return (
-        <div>
+        <div className='my-5 '>
           
-           <input onKeyDown={Task} type="text" placeholder="Type here" name='task' class="input input-bordered w-full max-w-xs" />
+           <div className='card w-6/12 lg:w-1/3bg-base-100 shadow-md mx-auto py-4 px-4  '>
+           <input onKeyDown={Task} type="text" placeholder="Enter task" name='task' class="input input-bordered w-full mx-auto" />
+           </div>
            
         </div>
     );

@@ -1,0 +1,29 @@
+[debug] [2022-07-02T15:53:06.637Z] ----------------------------------------------------------------------
+[debug] [2022-07-02T15:53:06.639Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Hp\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-07-02T15:53:06.640Z] CLI Version:   10.6.0
+[debug] [2022-07-02T15:53:06.640Z] Platform:      win32
+[debug] [2022-07-02T15:53:06.640Z] Node Version:  v16.13.2
+[debug] [2022-07-02T15:53:06.644Z] Time:          Sat Jul 02 2022 21:53:06 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-07-02T15:53:06.644Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-07-02T15:53:06.712Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-07-02T15:53:06.712Z] > authorizing via signed-in user (zilani.cuet@gmail.com)
+[debug] [2022-07-02T15:53:06.712Z] [iam] checking project to-do-list-d9f15 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-07-02T15:53:06.715Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/to-do-list-d9f15:testIamPermissions [none]
+[debug] [2022-07-02T15:53:06.715Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/to-do-list-d9f15:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-07-02T15:53:09.733Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/to-do-list-d9f15:testIamPermissions 200
+[debug] [2022-07-02T15:53:09.733Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/to-do-list-d9f15:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-07-02T15:53:09.735Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/to-do-list-d9f15 [none]
+[debug] [2022-07-02T15:53:11.721Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/to-do-list-d9f15 200
+[debug] [2022-07-02T15:53:11.721Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/to-do-list-d9f15 {"projectId":"to-do-list-d9f15","projectNumber":"288562199949","displayName":"To-do-list","name":"projects/to-do-list-d9f15","resources":{"hostingSite":"to-do-list-d9f15"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'to-do-list-d9f15'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-07-02T15:53:11.725Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/to-do-list-d9f15 [none]
+[debug] [2022-07-02T15:53:21.843Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/to-do-list-d9f15
+[debug] [2022-07-02T15:53:22.190Z] FirebaseError: Failed to make request to https://firebase.googleapis.com/v1beta1/projects/to-do-list-d9f15
+    at RetryOperation._fn (C:\Users\Hp\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:240:31)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project to-do-list-d9f15. Please make sure the project exists and your account has permission to access it.

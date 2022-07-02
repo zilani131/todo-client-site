@@ -3,8 +3,8 @@ import Todolist from './Home/Todolist';
 
 const Home = () => {
     return (
-        <div>
-            Home
+        <div  >
+      
             <Todolist></Todolist>
         </div>
     );
