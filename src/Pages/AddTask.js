@@ -5,8 +5,12 @@ const AddTask = () => {
         
        if(e.key==="Enter"){
         e.preventDefault();
-        console.log(e.target?.task?.value,"validate")
-        const task=e.target?.task?.value;
+        console.log(e.target?.value,"validate")
+        const task=e.target?.value;
+        if(task===""){
+            return alert("please give some input")
+        }
+        // console.log("after effect");
         const data={task}
         
 fetch('http://localhost:5000/task', {
@@ -21,15 +25,15 @@ fetch('http://localhost:5000/task', {
     console.log('Success:', data);
    
   })
-  console.log(e.target.reset());
+  e.target.value=""
        }
        
     }
     return (
         <div>
-           <form >
+          
            <input onKeyDown={Task} type="text" placeholder="Type here" name='task' class="input input-bordered w-full max-w-xs" />
-           </form>
+           
         </div>
     );
 };
