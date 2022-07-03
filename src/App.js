@@ -10,6 +10,7 @@ import Registration from "./Pages/Registration";
 import RequireAuth from "./Pages/RequireAuth";
 import Calender from "./Pages/Calender";
 import Footer from "./Shared/Footer";
+import NotFound from "./Pages/NotFound";
 function App() {
   return (
     <div className="App">
@@ -59,6 +60,8 @@ function App() {
         />
         <Route path="/login" element={<Login></Login>} />
         <Route path="/registration" element={<Registration></Registration>} />
+        <Route path="*" element={<NotFound></NotFound>} />
+        
       </Routes>
       <Footer></Footer>
     </div>

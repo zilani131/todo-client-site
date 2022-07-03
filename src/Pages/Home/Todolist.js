@@ -19,7 +19,7 @@ const Todolist = () => {
     return (
         <div className='mt-6'>
             {data?.length===0? <h1 className='text-lg font-semibold'>Assalamualaikum <span className='uppercase'>{user?.displayName}</span>.
-             You did not add any task .  </h1> :<div className='flex flex-col gap-3' >{data?.length && data.map(datum=><Todolistcard key={datum._id} datum={datum} refetch={refetch}></Todolistcard>).reverse()}</div>}
+             You have no task . Add some task .  </h1> :<div className='flex flex-col gap-3' >{data?.length && data.map(datum=><Todolistcard key={datum._id} datum={datum} refetch={refetch}></Todolistcard>).reverse()}</div>}
              <Link className="btn btn-outline btn-primary btn-md my-5" to="/addtask" >Add Task</Link>
         </div>
     );

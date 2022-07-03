@@ -14,7 +14,7 @@ const CompletedTask = () => {
     return (
         <div className='flex flex-col gap-4 mt-5'>
             {data?.length && data.map((datum,index)=> <div class="card w-10/12 lg:w-1/3 bg-base-100 shadow-md mx-auto">
-  <div class="card-body"> <h2 class="card-title" key={datum._id}>{datum.task} </h2> </div></div>).reverse()}
+  <div class="card-body"> <li className='text-2xl font-semibold text-start' key={datum._id}>  {datum.task} </li> </div></div>).reverse()}
         </div>
     );
 };
